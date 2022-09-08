@@ -5,12 +5,14 @@ services:
     build: .
     ports:
       - "8080:8080"
-    links:
-      - mongo-db:localhost
+    restart: always
+    depends_on:
+      - mongo-db
 
-  
   mongo-db:
-    image: mongo 
+    image: mongo
+    container_name: ankushmongo
+    restart: always
     ports:
       - "27017:27017"
     # environment:

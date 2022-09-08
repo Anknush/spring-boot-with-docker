@@ -44,7 +44,7 @@ public class SubjectController {
 		return services.updatingStudent(student);
 	}
 
-	@DeleteMapping("/delete")
+	@DeleteMapping("/delete/{id}")
 	public String deleteStudent(@PathVariable String id) {
 		return services.deletingStudent(id);
 	}
